@@ -242,11 +242,9 @@ header {
 }
 
 .img-historia {
-        width: 100%;
-        max-width: 300px; /* Limite para não ficar gigante em tablets */
-        border-radius: 50%;
-        display: block;
-        margin: 0 auto;
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid white;
 }
 
 /* --- ADICIONE ESTE BLOCO AQUI --- */
@@ -573,11 +571,11 @@ header.sticky {
    9. RESPONSIVIDADE (MOBILE)
    ========================================= */
 
-/* Estilo do botão Hamburguer */
+/* Estilo do botão Hamburguer (Comum para tablets e celulares) */
 .burger { 
     display: none; 
     cursor: pointer; 
-    z-index: 1001; /* Fica acima de tudo */
+    z-index: 1001; 
 }
 
 .burger div {
@@ -588,29 +586,73 @@ header.sticky {
     transition: all 0.3s ease;
 }
 
+/* TABLETS */
 @media (max-width: 1024px) {
     .btn-agendar-floating { display: none; }
     .nav-links { gap: 15px; }
     .hero h1 { font-size: 2.8rem; }
 }
 
-@media (max-width: 768px) {
-    body {
-        overflow-x: hidden; /* Evita scroll lateral ao abrir menu */
+/* CELULARES E TELAS ATÉ 900PX (Aqui resolvemos as fotos e o mapa) */
+@media (max-width: 900px) {
+    /* 1. Ajuste do Perfil (Foto quadrada com sombra) */
+    .perfil-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
     }
 
+    /* 2. Ajuste do "Início da Jornada" (Foto Redonda) */
+    .historia-wrapper {
+        grid-template-columns: 1fr;
+        padding: 2.5rem 1.5rem;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .historia-img-box {
+        order: -1; /* Coloca a foto acima do texto no celular */
+        display: flex;
+        justify-content: center;
+    }
+
+    .img-historia {
+        width: 250px; /* Tamanho maior e centralizado no celular */
+        height: 250px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    /* 3. Ajuste do Mapa e Contato */
+    .contato-wrapper {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+        gap: 40px;
+    }
+
+    .mapa-box {
+        height: 350px; /* Altura confortável para o mapa no touch */
+        order: 2; /* Mapa fica abaixo das informações */
+        width: 100%;
+    }
+
+    .info-items .item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Ajustes do Menu Mobile que você já tinha */
+    body { overflow-x: hidden; }
     .nav-container {
-        flex-direction: row; /* Alinha logo e burger na mesma linha */
+        flex-direction: row;
         justify-content: space-between;
         padding: 0 20px;
     }
-
     .logo-wrapper { margin-bottom: 0; }
-    .logo-img { height: 60px; } /* Logo menor no mobile */
-
+    .logo-img { height: 60px; }
     .burger { display: block; }
 
-    /* Menu que desliza da direita */
     .nav-links {
         position: fixed;
         right: 0px;
@@ -621,7 +663,7 @@ header.sticky {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 70%;
+        width: 75%;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
         box-shadow: -10px 0 30px rgba(0,0,0,0.1);
@@ -629,28 +671,15 @@ header.sticky {
         gap: 30px;
     }
 
-    .nav-links li {
-        opacity: 0; /* Começa invisível para o JS animar */
-    }
+    .nav-links li { opacity: 0; }
+    .nav-active { transform: translateX(0%); }
 
-    /* Classe ativada pelo JS */
-    .nav-active {
-        transform: translateX(0%);
-    }
-
-    /* Animação do X no Burger (ativada pelo JS) */
-    .toggle .line1 {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    .toggle .line2 {
-        opacity: 0;
-    }
-    .toggle .line3 {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
+    .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+    .toggle .line2 { opacity: 0; }
+    .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
 }
 
-/* Animação de entrada dos links (usada no JS) */
+/* Animação de entrada dos links */
 @keyframes navLinkFade {
     from {
         opacity: 0;
@@ -972,4 +1001,5 @@ footer {
     color: var(--accent-color);
 
 }
+
 
