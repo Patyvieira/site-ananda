@@ -52,7 +52,6 @@
 
         <section class="proximos-eventos" style="padding: 5rem 0;">
             <div class="container" id="container-eventos">
-                
                 <div id="lista-eventos-dinamicos">
                     <p class="text-center">Buscando agenda atualizada...</p>
                 </div>
@@ -69,12 +68,10 @@
             <div class="footer-section">
                 <h4>Espaço Despertar Ananda</h4>
                 <p>Ressignificação Sistêmica e Princípios Védicos.</p>
-                
                 <a href="https://espacodespertarananda.netlify.app/admin/" class="link-admin-footer">
                     <i class="fas fa-lock"></i> Acesso Administrativo
                 </a>
             </div>    
-
             <div class="footer-section">
                 <h4>Redes Sociais</h4>
                 <div class="socials">
@@ -96,23 +93,24 @@
           const arquivos = await response.json();
           
           if (Array.isArray(arquivos) && arquivos.length > 0) {
-            grid.innerHTML = ''; // Limpa a mensagem de carregando
+            grid.innerHTML = ''; 
             
             for (const arquivo of arquivos) {
               const resConteudo = await fetch(arquivo.download_url);
               const textoYaml = await resConteudo.text();
-              const evento = jsyaml.load(textoYaml);
+              
+              // Extrai o conteúdo entre os "---" (formato Markdown com Frontmatter)
+              const dadosLimpos = textoYaml.split('---')[1];
+              const evento = jsyaml.load(dadosLimpos);
 
-              // Tratamento da data para separar dia, mês e ano
               const dataObj = new Date(evento.date);
               const dia = dataObj.getDate().toString().padStart(2, '0');
               const mes = dataObj.toLocaleString('pt-BR', { month: 'short' }).toUpperCase().replace('.', '');
               const ano = dataObj.getFullYear();
 
-              // Criação do elemento usando sua estrutura exata
               const divEvento = document.createElement('div');
               divEvento.className = 'evento-detalhado';
-              divEvento.style.marginBottom = "40px"; // Espaço entre eventos
+              divEvento.style.marginBottom = "40px";
               divEvento.innerHTML = `
                 <div class="evento-img-large">
                     <img src="${evento.image}" alt="${evento.title}">
@@ -126,7 +124,7 @@
                     <span class="tag-categoria">Agenda Aberta</span>
                     <h3>${evento.title}</h3>
                     <div class="texto-descritivo">
-                        ${evento.body}
+                        <p>${evento.body || ''}</p>
                     </div>
                     <a href="https://wa.me/5538991440819" target="_blank" class="btn-solid" style="align-self: flex-start; margin-top: 20px;">Garantir minha vaga</a>
                 </div>
@@ -144,3 +142,4 @@
     </script>
 </body>
 </html>
+
