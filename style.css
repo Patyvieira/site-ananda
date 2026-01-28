@@ -242,9 +242,11 @@ header {
 }
 
 .img-historia {
-    width: 100%;
-    border-radius: 50%;
-    border: 5px solid white;
+        width: 100%;
+        max-width: 300px; /* Limite para não ficar gigante em tablets */
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
 }
 
 /* --- ADICIONE ESTE BLOCO AQUI --- */
@@ -970,3 +972,4 @@ footer {
     color: var(--accent-color);
 
 }
+
