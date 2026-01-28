@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeos | Espaço Despertar Ananda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+</body>
+</html>
+
+    <header>
+        <nav class="nav-container">
+            <div class="logo-wrapper">
+                <a href="index.html"><img src="logo.png" alt="Logo" class="logo-img"></a>
+                <span class="site-tagline">YOGA • AYURVEDA • MEDICINA TRADICIONAL CHINESA • ARTE</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">INÍCIO</a></li>
+                <li><a href="o-espaco.html">O ESPAÇO</a></li>
+                <li><a href="novos-eventos.html">NOVOS EVENTOS</a></li> 
+                <li><a href="vivencias.html">VIVÊNCIAS</a></li>
+                <li><a href="videos.html">VÍDEOS</a></li>
+                <li><a href="contato.html">CONTATO</a></li>
+            </ul>
+            <a href="https://wa.me/5538991440819" target="_blank" class="btn-agendar-floating"><i class="fab fa-whatsapp"></i> Agendar</a>
+            <div class="burger"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header text-center" style="padding: 4rem 0; background-color: var(--secondary-bg);">
+            <div class="container">
+                <h1>Galeria de Vídeos</h1>
+                <p>Explore nossos ensinamentos sobre autoconhecimento, medicina tradicional chinesa e a essência do nosso espaço.</p>
+            </div>
+        </section>
+
+        <section class="video-gallery" style="padding: 5rem 0;">
+            <div class="container">
+                <div class="video-grid">
+                    
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/D7AB8szoNz4" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>Apresentação do Espaço</h3>
+                            <p>Conheça a professora Ilza Oliva e o trabalho de despertar da consciência realizado no Ananda.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/rXSqpLTxhoc" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>A Divina Estampa do "EU SOU"</h3>
+                            <p>Um estudo sobre a imagem do eu Divino, os sete raios e o processo de autocura.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/kDxkNYAjSsE" 
+                                title="Estudo do Corpo Físico - Ilza Oliva" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>Estudo do Corpo Físico</h3>
+                            <p>A professora Ilza Oliva explora a constituição humana e a relação entre Yoga e Ayurveda para a saúde integral.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/z1Z2CmTA540" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>Ressignificação Sistêmica</h3>
+                            <p>Uma introdução ao método que une Terapias Orientais e autoconhecimento profundo.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Espaço Despertar Ananda</h4>
+                <p>Ressignificação Sistêmica e Princípios Védicos.</p>
+                
+                <a href="equipe.html" class="link-admin-footer">
+                    <i class="fas fa-lock"></i> Acesso Administrativo
+                </a>
+            </div>  
+
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <div class="socials">
+                    <a href="https://www.instagram.com/ananda.despertar/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@ananda.despertar" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 Espaço Despertar Ananda.</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

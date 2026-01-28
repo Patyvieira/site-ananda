@@ -1,0 +1,897 @@
+/* =========================================
+   1. VARIÁVEIS E RESET (PALETA DO LOGO)
+   ========================================= */
+:root {
+    --bg-color: #FFF9F5;
+    --secondary-bg: #FDECE2;
+    --text-color: #4A4056;
+    --accent-color: #E88D67;
+    --detail-green: #9CB283;
+    --detail-blue: #6494AA;
+    --white: #ffffff;
+    --font-heading: 'Lora', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. TIPOGRAFIA E ELEMENTOS GERAIS
+   ========================================= */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center { text-align: center; }
+
+/* Botões */
+.btn-solid {
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-solid:hover {
+    background-color: #d67a52;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid var(--white);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--text-color);
+}
+
+/* =========================================
+   3. CABEÇALHO CENTRALIZADO
+   ========================================= */
+header {
+    background-color: var(--white);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-wrapper {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.logo-img {
+    height: 85px;
+    width: auto;
+}
+
+.site-tagline {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: var(--accent-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .active-link {
+    color: var(--accent-color) !important;
+}
+
+.btn-agendar-floating {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+/* =========================================
+   4. SEÇÃO HERO
+   ========================================= */
+.hero {
+    height: 85vh;
+    background: linear-gradient(rgba(74, 64, 86, 0.5), rgba(232, 141, 103, 0.3)), url('capa.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--white);
+    margin: 20px 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;  /* Garante centralização à esquerda */
+    margin-right: auto; /* Garante centralização à direita */
+    text-align: center; /* Garante que o texto interno esteja centralizado */
+}
+
+.hero-buttons { display: flex; gap: 20px; justify-content: center; }
+
+/* =========================================
+   5. SEÇÃO SOBRE (ILZA OLIVA)
+   ========================================= */
+.sobre-section { padding: 6rem 0; background: var(--white); }
+
+.perfil-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.img-ilza {
+    width: 100%;
+    border-radius: 20px 0 20px 0;
+    box-shadow: 20px 20px 0px var(--secondary-bg);
+}
+
+.destaque-bio {
+    font-size: 1.2rem;
+    font-style: italic;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 20px;
+    margin: 20px 0;
+    color: var(--text-color);
+}
+
+.historia-wrapper {
+    background: var(--bg-color);
+    padding: 4rem;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.img-historia {
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+/* --- ADICIONE ESTE BLOCO AQUI --- */
+/* Destaque para os títulos internos da história */
+.historia-text h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-top: 2.5rem; /* Dá espaço entre o texto anterior e o novo título */
+    margin-bottom: 1rem;
+    padding-left: 15px;
+    border-left: 4px solid var(--accent-color); /* Linha vertical laranja */
+    line-height: 1.2;
+}
+
+/* Remove o espaço extra apenas no primeiro título para não desalinhar com a imagem ao lado */
+.historia-text h3:first-of-type {
+    margin-top: 0;
+}
+/* -------------------------------- */
+
+/* =========================================
+   6. VIVÊNCIAS (LAYOUT DE LISTA DETALHADA)
+   ========================================= */
+/* Centraliza o card inteiro na página */
+.curso-destaque {
+    display: flex;
+    flex-direction: column; /* Empilha no mobile */
+    align-items: center; 
+    text-align: center;  
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin: 40px auto;   /* O "auto" aqui é o que centraliza o bloco na tela */
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Centraliza o texto e o botão dentro do card */
+.curso-content {
+    padding: 3rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o botão 'Saiba Mais' */
+}
+
+/* Garante que em telas de computador ele fique lado a lado, mas ainda centralizado */
+@media (min-width: 768px) {
+    .curso-destaque {
+        flex-direction: row;
+        text-align: left;
+    }
+    .curso-content {
+        align-items: flex-start; /* No PC, o texto e botão voltam para a esquerda dentro do card */
+    }
+}
+
+.curso-img {
+    flex: 1;
+    width: 100%;
+    height: 400px;
+}
+
+.curso-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+   .eventos-lista-section {
+    padding-bottom: 5rem;
+}
+
+.evento-detalhado {
+    background-color: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    display: flex; /* Coloca imagem e texto lado a lado */
+    overflow: hidden;
+    margin-bottom: 4rem; /* Espaço entre um evento e outro */
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+/* Coluna da Imagem */
+.evento-img-large {
+    flex: 1; /* Ocupa metade do espaço */
+    position: relative;
+    min-height: 400px; /* Garante altura para a foto aparecer bem */
+}
+
+.evento-img-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cobre a área sem distorcer */
+    /* Se ainda cortar o rosto, mude para: object-fit: contain; background: #f4f4f4; */
+}
+
+/* Data Flutuante */
+.data-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.data-badge .dia { font-size: 1.5rem; font-weight: 700; display: block; }
+.data-badge .mes { font-size: 0.8rem; text-transform: uppercase; margin-top: 2px; }
+.data-badge .ano { font-size: 0.7rem; opacity: 0.9; margin-top: 2px; }
+
+/* Coluna do Conteúdo */
+.evento-conteudo-large {
+    flex: 1.2; /* Ocupa um pouco mais da metade */
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tag-categoria {
+    color: var(--detail-green);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.evento-conteudo-large h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.subtitulo-evento {
+    font-family: var(--font-body);
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.texto-descritivo p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.evento-footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 30px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.evento-footer i {
+    color: var(--accent-color);
+    margin-right: 5px;
+}
+
+/* Responsivo para Celular */
+@media (max-width: 900px) {
+    .evento-detalhado {
+        flex-direction: column; /* Imagem em cima, texto embaixo */
+    }
+    
+    .evento-img-large {
+        min-height: 250px;
+        max-height: 300px;
+    }
+    
+    .evento-conteudo-large {
+        padding: 2rem;
+    }
+}
+
+/* =========================================
+   7. SEÇÃO DE CONTATO (AJUSTE LADO A LADO)
+   ========================================= */
+.contato-section {
+    padding: 6rem 0;
+    background-color: var(--bg-color);
+}
+
+.contato-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    gap: 60px;
+    background-color: var(--white);
+    padding: 4rem; /* Aumentado para dar mais respiro */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    width: 100%; /* Ocupa toda a largura do container */
+    align-items: center;
+}
+
+.contato-info h2 {
+    margin-bottom: 2rem;
+    font-family: var(--font-heading);
+}
+
+.info-items .item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.info-items i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    background-color: var(--secondary-bg);
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.info-items strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.link-destaque {
+    color: var(--detail-blue);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.link-destaque:hover {
+    color: var(--accent-color);
+}
+
+/* Ajuste do Mapa */
+.mapa-box {
+    width: 100%;
+    height: 480px; /* Altura ajustada para equilibrar com o texto */
+    border-radius: 15px;
+    overflow: hidden;
+    border: 8px solid var(--white);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   8. VÍDEO E RODAPÉ
+   ========================================= */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 40px 0;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+footer {
+    background: var(--text-color);
+    color: #dedede;
+    padding: 5rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.socials a {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   9. RESPONSIVIDADE (MOBILE)
+   ========================================= */
+.burger { display: none; cursor: pointer; }
+
+@media (max-width: 1024px) {
+    .btn-agendar-floating { display: none; }
+    .nav-links { gap: 20px; }
+    .hero h1 { font-size: 2.8rem; }
+}
+
+@media (max-width: 900px) {
+    .perfil-wrapper, .historia-wrapper, .evento-detalhado, .contato-wrapper {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+        gap: 30px;
+    }
+
+    .mapa-box {
+        height: 350px;
+        order: 2; /* Garante que o mapa fique abaixo do texto no celular */
+    }
+
+    .evento-img-large { min-height: 250px; }
+}
+
+/* =========================================
+   PÁGINA O ESPAÇO - ALINHAMENTOS
+   ========================================= */
+
+/* Grid de Introdução (Texto e Destaques) */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding: 4rem 0;
+}
+
+.intro-highlights ul {
+    list-style: none;
+    background: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.intro-highlights li {
+    margin-bottom: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.intro-highlights i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+/* Galeria de Fotos */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 5rem;
+}
+
+.gallery-item {
+    position: relative;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(74, 64, 86, 0.8));
+    color: white;
+}
+
+.gallery-item .overlay h3 {
+    color: white !important;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Responsividade O Espaço */
+@media (max-width: 900px) {
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .intro-highlights ul {
+        display: inline-block;
+        text-align: left;
+    }
+}
+
+/* =========================================
+   RODAPÉ (ACRESCENTADO)
+   ========================================= */
+footer {
+    background: var(--text-color);
+    color: var(--white);
+    padding: 5rem 0 2rem;
+    margin-top: 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section h4 {
+    color: var(--white);
+    margin-bottom: 1.2rem;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.socials a {
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.socials a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Ajuste do rodapé para celular */
+@media (max-width: 768px) {
+    .footer-content {
+        text-align: center;
+    }
+    .socials {
+        justify-content: center;
+    }
+}
+
+/* =========================================
+   ESTILOS EXCLUSIVOS: PÁGINA VIDEOS.HTML
+   ========================================= */
+
+/* Grade que organiza os vídeos */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+/* Cartão individual de cada vídeo */
+.video-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* Efeito de levante ao passar o mouse */
+.video-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Container para manter a proporção 16:9 do YouTube */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Bloco de texto abaixo do vídeo */
+.video-info {
+    padding: 1.8rem;
+}
+
+.video-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    color: var(--text-color);
+}
+
+.video-info p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Banner de Chamada para Eventos no Index */
+/* Container do Banner */
+.banner-agenda {
+    background: linear-gradient(135deg, var(--accent-color), #d67a52);
+    padding: 4rem 3rem 3rem 3rem; /* Aumentei o espaço no topo para o selo */
+    border-radius: 20px;
+    position: relative; /* Necessário para o posicionamento absoluto do topo */
+    color: var(--white);
+    box-shadow: 0 15px 35px rgba(232, 141, 103, 0.2);
+    overflow: hidden;
+}
+
+/* Agenda 2026 no topo à esquerda */
+.agenda-topo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 15px;
+    border-radius: 50px;
+}
+
+/* Layout do corpo do banner */
+.agenda-corpo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Destaque para o Título principal */
+.agenda-info h2 {
+    color: var(--white);
+    font-size: 2.8rem; /* Aumentado para grande destaque */
+    font-family: var(--font-heading);
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+/* Remove a linha laranja padrão que usamos nos outros h2 para não poluir o banner */
+.agenda-info h2::after {
+    display: none;
+}
+
+.agenda-info p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .agenda-corpo {
+        flex-direction: column;
+        text-align: center;
+    }
+    .agenda-info h2 {
+        font-size: 2rem;
+    }
+    .agenda-topo {
+        left: 50%;
+        transform: translateX(-50%); /* Centraliza no mobile */
+    }
+}
+
+.link-admin-footer {
+    font-size: 0.75rem;
+    color: var(--white);
+    opacity: 0.5; /* Deixa o link mais discreto */
+    text-decoration: none;
+    margin-top: 15px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.link-admin-footer:hover {
+    opacity: 1; /* Acende quando passa o mouse */
+    color: var(--accent-color);
+}

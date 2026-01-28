@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images" # Onde as fotos novas serão salvas
+public_folder: "/images"
+
+collections:
+  - name: "videos"
+    label: "Gerenciar Vídeos"
+    folder: "_data/videos" # O CMS lerá os dados daqui
+    create: true
+    fields:
+      - {label: "Título do Vídeo", name: "title", widget: "string"}
+      - {label: "ID do YouTube (Ex: kDxkNYAjSsE)", name: "youtube_id", widget: "string"}
+      - {label: "Descrição Curta", name: "description", widget: "text"}
+
+  - name: "eventos"
+    label: "Próximos Eventos"
+    folder: "_data/eventos"
+    create: true
+    fields:
+      - {label: "Nome do Evento", name: "title", widget: "string"}
+      - {label: "Data", name: "date", widget: "datetime"}
+      - {label: "Imagem de Capa", name: "image", widget: "image"}
+      - {label: "Descrição do Evento", name: "body", widget: "markdown"}

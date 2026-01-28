@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próximos Eventos | Espaço Despertar Ananda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+</body>
+</html>
+
+    <header>
+        <nav class="nav-container">
+            <div class="logo-wrapper">
+                <a href="index.html"><img src="logo.png" alt="Logo" class="logo-img"></a>
+                <span class="site-tagline">YOGA • AYURVEDA • MEICINA TRADICIONAL CHINESA • ARTE</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">INÍCIO</a></li>
+                <li><a href="o-espaco.html">O ESPAÇO</a></li>
+                <li><a href="novos-eventos.html" class="active-link">NOVOS EVENTOS</a></li>
+                <li><a href="vivencias.html">VIVÊNCIAS</a></li>
+                <li><a href="videos.html">VÍDEOS</a></li>
+                <li><a href="contato.html">CONTATO</a></li>
+            </ul>
+            <a href="https://wa.me/5538991440819" target="_blank" class="btn-agendar-floating"><i class="fab fa-whatsapp"></i> Agendar</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header text-center" style="padding: 4rem 0; background-color: var(--secondary-bg);">
+            <div class="container">
+                <h1>Próximos Encontros</h1>
+                <p>Confira nossa agenda de cursos, retiros e oficinas temporárias.</p>
+            </div>
+        </section>
+
+        <section class="proximos-eventos" style="padding: 5rem 0;">
+            <div class="container">
+                <div class="evento-detalhado">
+                    <div class="evento-img-large">
+                        <img src="proximo-evento.jpg" alt="Título do Evento">
+                        <div class="data-badge"><span class="dia">--</span><span class="mes">EM BREVE</span><span class="ano">2026</span></div>
+                    </div>
+                    <div class="evento-conteudo-large">
+                        <span class="tag-categoria">Agenda Aberta</span>
+                        <h3>Título do Próximo Evento</h3>
+                        <h4 class="subtitulo-evento">Uma breve descrição chamativa do evento.</h4>
+                        <div class="texto-descritivo">
+                            <p>Aqui você descreverá os detalhes do novo evento, o que os participantes podem esperar e os benefícios dessa vivência.</p>
+                        </div>
+                        <a href="https://wa.me/5538991440819" target="_blank" class="btn-solid" style="align-self: flex-start;">Garantir minha vaga</a>
+                    </div>
+                </div>
+                
+                <div class="text-center" style="margin-top: 3rem; opacity: 0.7;">
+                    <p>Fique atento às nossas redes sociais para novos anúncios!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Espaço Despertar Ananda</h4>
+                <p>Ressignificação Sistêmica e Princípios Védicos.</p>
+                
+                <a href="equipe.html" class="link-admin-footer">
+                    <i class="fas fa-lock"></i> Acesso Administrativo
+                </a>
+            </div>    
+
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <div class="socials">
+                    <a href="https://www.instagram.com/ananda.despertar/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@ananda.despertar" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 Espaço Despertar Ananda.</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

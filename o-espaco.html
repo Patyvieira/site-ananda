@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Espaço | Espaço Despertar Ananda</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+</body>
+</html>
+
+    <header>
+        <nav class="nav-container">
+            <div class="logo-wrapper">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo Espaço Despertar Ananda" class="logo-img">
+                </a>
+                <span class="site-tagline">YOGA • AYURVEDA • MEDICINA TRADICIONAL CHINESA • ARTE</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">INÍCIO</a></li>
+                <li><a href="o-espaco.html">O ESPAÇO</a></li>
+                <li><a href="novos-eventos.html">NOVOS EVENTOS</a></li> 
+                <li><a href="vivencias.html">VIVÊNCIAS</a></li>
+                <li><a href="videos.html">VÍDEOS</a></li>
+                <li><a href="contato.html">CONTATO</a></li>
+            </ul>
+            <a href="https://wa.me/5538991440819?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20vivências%20do%20Espaço%20Ananda." target="_blank" class="btn-agendar-floating"><i class="fab fa-whatsapp"></i> Agendar</a>
+            <div class="burger">
+                <div class="line1"></div><div class="line2"></div><div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header text-center" style="padding: 4rem 0; background-color: var(--secondary-bg);">
+            <div class="container">
+                <h1>Nosso Refúgio</h1>
+                <p>Um santuário de paz e reconexão na Vila Oliveira.</p>
+            </div>
+        </section>
+
+        <section class="intro-espaco">
+            <div class="container">
+                <div class="intro-grid">
+                    <div class="intro-text">
+                        <h2>Conexão com a Terra</h2>
+                        <p>O Espaço Despertar Ananda foi projetado para ser um portal de desconexão com a correria urbana. Cada cantinho integra a vegetação natural, a arquitetura rústica e espaços dedicados à expressão artística.</p>
+                        <p>Aqui, acreditamos que o ambiente é o primeiro passo para a cura e o autoconhecimento.</p>
+                    </div>
+                    <div class="intro-highlights">
+                        <ul>
+                            <li><i class="fas fa-seedling"></i> Jardins e Hortas Orgânicas</li>
+                            <li><i class="fas fa-child"></i> Espaços Temáticos Infantis</li>
+                            <li><i class="fas fa-leaf"></i> Áreas de Meditação ao Ar Livre</li>
+                            <li><i class="fas fa-palette"></i> Atelier de Expressão Artística</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="galeria-espaco" style="padding-bottom: 5rem;">
+            <div class="container">
+                <h2 class="text-center mb-5">Nossos Ambientes</h2>
+                <div class="gallery-grid">
+                    
+                    <div class="gallery-item">
+                        <img src="espaco-jardim.jpg" alt="Jardim do Ananda">
+                        <div class="overlay"><h3>Integração Natural</h3></div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="espaco-infantil.jpg" alt="Área Infantil">
+                        <div class="overlay"><h3>Oficinas Infantis</h3></div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="espaco-cozinha.jpg" alt="Cozinha Ananda">
+                        <div class="overlay"><h3>Alimentação Consciente</h3></div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="espaco-natureza.jpg" alt="Cuidado com a Vida">
+                        <div class="overlay"><h3>Cuidado com a Natureza</h3></div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="espaco-decoracao.jpg" alt="Detalhes e Arte">
+                        <div class="overlay"><h3>Arte e Beleza</h3></div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="espaco-noite.jpg" alt="Ananda à Noite">
+                        <div class="overlay"><h3>Magia Noturna</h3></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Espaço Despertar Ananda</h4>
+                <p>Ressignificação Sistêmica e Princípios Védicos.</p>
+                
+                <a href="equipe.html" class="link-admin-footer">
+                    <i class="fas fa-lock"></i> Acesso Administrativo
+                </a>
+            </div>  
+
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <p>Rua das Chácaras, 138, Vila Oliveira</p>
+                <p>Montes Claros - MG</p>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <div class="socials">
+                    <a href="https://www.instagram.com/ananda.despertar/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@ananda.despertar" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 Espaço Despertar Ananda.</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
