@@ -39,6 +39,12 @@
                 <li><a href="contato.html">CONTATO</a></li>
             </ul>
             <a href="https://wa.me/5538991440819" target="_blank" class="btn-agendar-floating"><i class="fab fa-whatsapp"></i> Agendar</a>
+            
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
         </nav>
     </header>
 
@@ -99,7 +105,6 @@
               const resConteudo = await fetch(arquivo.download_url);
               const textoYaml = await resConteudo.text();
               
-              // Extrai o conteúdo entre os "---" (formato Markdown com Frontmatter)
               const dadosLimpos = textoYaml.split('---')[1];
               const evento = jsyaml.load(dadosLimpos);
 
@@ -142,4 +147,5 @@
     </script>
 </body>
 </html>
+
 
