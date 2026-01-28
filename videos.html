@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 </head>
 <body>
     <script>
@@ -22,8 +23,6 @@
         });
       }
     </script>
-</body>
-</html>
 
     <header>
         <nav class="nav-container">
@@ -54,7 +53,7 @@
 
         <section class="video-gallery" style="padding: 5rem 0;">
             <div class="container">
-                <div class="video-grid">
+                <div class="video-grid" id="video-grid">
                     
                     <div class="video-card">
                         <div class="video-container">
@@ -66,43 +65,7 @@
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/rXSqpLTxhoc" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-info">
-                            <h3>A Divina Estampa do "EU SOU"</h3>
-                            <p>Um estudo sobre a imagem do eu Divino, os sete raios e o processo de autocura.</p>
-                        </div>
                     </div>
-
-                    <div class="video-card">
-                        <div class="video-container">
-                            <iframe 
-                                src="https://www.youtube.com/embed/kDxkNYAjSsE" 
-                                title="Estudo do Corpo Físico - Ilza Oliva" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                        <div class="video-info">
-                            <h3>Estudo do Corpo Físico</h3>
-                            <p>A professora Ilza Oliva explora a constituição humana e a relação entre Yoga e Ayurveda para a saúde integral.</p>
-                        </div>
-                    </div>
-
-                    <div class="video-card">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/z1Z2CmTA540" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-info">
-                            <h3>Ressignificação Sistêmica</h3>
-                            <p>Uma introdução ao método que une Terapias Orientais e autoconhecimento profundo.</p>
-                        </div>
-                    </div>
-
-                </div>
             </div>
         </section>
     </main>
@@ -113,7 +76,7 @@
                 <h4>Espaço Despertar Ananda</h4>
                 <p>Ressignificação Sistêmica e Princípios Védicos.</p>
                 
-                <a href="equipe.html" class="link-admin-footer">
+                <a href="https://espacodespertarananda.netlify.app/admin/" class="link-admin-footer">
                     <i class="fas fa-lock"></i> Acesso Administrativo
                 </a>
             </div>  
@@ -126,9 +89,45 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">© 2025 Espaço Despertar Ananda.</div>
+        <div class="footer-bottom">© 2026 Espaço Despertar Ananda.</div>
     </footer>
 
     <script src="script.js"></script>
+
+    <script>
+      async function carregarVideosDoPainel() {
+        const grid = document.getElementById('video-grid');
+        try {
+          // Busca a lista de arquivos na pasta de dados do Netlify CMS
+          const response = await fetch('https://api.github.com/repos/Patyvieira/site-ananda/contents/_data/videos');
+          const arquivos = await response.json();
+          
+          if (Array.isArray(arquivos)) {
+            for (const arquivo of arquivos) {
+              const resConteudo = await fetch(arquivo.download_url);
+              const textoYaml = await resConteudo.text();
+              const video = jsyaml.load(textoYaml);
+
+              // Cria o elemento do vídeo mantendo sua estrutura CSS original
+              const card = document.createElement('div');
+              card.className = 'video-card';
+              card.innerHTML = `
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/${video.youtube_id}" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>${video.title}</h3>
+                    <p>${video.description}</p>
+                </div>
+              `;
+              grid.appendChild(card);
+            }
+          }
+        } catch (erro) {
+          console.log("Aguardando novos vídeos do painel...");
+        }
+      }
+      carregarVideosDoPainel();
+    </script>
 </body>
 </html>
