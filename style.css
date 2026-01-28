@@ -560,30 +560,104 @@ footer {
     font-size: 0.9rem;
 }
 
+/* --- COLOQUE O STICKY HEADER AQUI (Fora do @media) --- */
+header.sticky {
+    padding: 0.8rem 0; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 0.98);
+}
+
 /* =========================================
    9. RESPONSIVIDADE (MOBILE)
    ========================================= */
-.burger { display: none; cursor: pointer; }
+
+/* Estilo do botão Hamburguer */
+.burger { 
+    display: none; 
+    cursor: pointer; 
+    z-index: 1001; /* Fica acima de tudo */
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
 
 @media (max-width: 1024px) {
     .btn-agendar-floating { display: none; }
-    .nav-links { gap: 20px; }
+    .nav-links { gap: 15px; }
     .hero h1 { font-size: 2.8rem; }
 }
 
-@media (max-width: 900px) {
-    .perfil-wrapper, .historia-wrapper, .evento-detalhado, .contato-wrapper {
-        grid-template-columns: 1fr;
-        padding: 2rem;
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Evita scroll lateral ao abrir menu */
+    }
+
+    .nav-container {
+        flex-direction: row; /* Alinha logo e burger na mesma linha */
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .logo-wrapper { margin-bottom: 0; }
+    .logo-img { height: 60px; } /* Logo menor no mobile */
+
+    .burger { display: block; }
+
+    /* Menu que desliza da direita */
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        height: 100vh;
+        top: 0;
+        background-color: var(--white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        z-index: 1000;
         gap: 30px;
     }
 
-    .mapa-box {
-        height: 350px;
-        order: 2; /* Garante que o mapa fique abaixo do texto no celular */
+    .nav-links li {
+        opacity: 0; /* Começa invisível para o JS animar */
     }
 
-    .evento-img-large { min-height: 250px; }
+    /* Classe ativada pelo JS */
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    /* Animação do X no Burger (ativada pelo JS) */
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+/* Animação de entrada dos links (usada no JS) */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
 
 /* =========================================
@@ -894,4 +968,5 @@ footer {
 .link-admin-footer:hover {
     opacity: 1; /* Acende quando passa o mouse */
     color: var(--accent-color);
+
 }
