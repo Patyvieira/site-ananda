@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "ativos" # Onde suas fotos novas serão salvas
+media_folder: "ativos"
 public_folder: "ativos"
 
 collections:
@@ -16,6 +16,10 @@ collections:
           - {label: "Título Principal", name: "hero_title", widget: "string"}
           - {label: "Subtítulo de Boas-vindas", name: "hero_subtitle", widget: "text"}
           - {label: "Imagem de Fundo (Banner)", name: "hero_image", widget: "image"}
+          # Novos campos para Missão, Visão e Valores na Home
+          - {label: "Nossa Missão", name: "missao", widget: "text"}
+          - {label: "Nossa Visão", name: "visao", widget: "text"}
+          - {label: "Nossos Valores (Use vírgulas)", name: "valores", widget: "text"}
 
   - name: "videos"
     label: "Gerenciar Vídeos"
@@ -26,7 +30,7 @@ collections:
       - {label: "ID do YouTube", name: "youtube_id", widget: "string"}
       - {label: "Descrição Curta", name: "description", widget: "text"}
 
-- name: "eventos"
+  - name: "eventos"
     label: "Próximos Eventos"
     folder: "_data/eventos"
     create: true
@@ -35,13 +39,11 @@ collections:
       - {label: "Data", name: "date", widget: "datetime"}
       - {label: "Imagem de Capa (Principal)", name: "image", widget: "image"}
       - {label: "Descrição", name: "body", widget: "markdown"}
-      
-      # NOVO CAMPO: Galeria de fotos extras
       - label: "Galeria de Fotos Extras"
         name: "gallery"
         widget: "list"
-        allow_add: true
         fields:
           - {label: "Imagem", name: "img_path", widget: "image"}
+
 
 
