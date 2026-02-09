@@ -26,13 +26,22 @@ collections:
       - {label: "ID do YouTube", name: "youtube_id", widget: "string"}
       - {label: "Descrição Curta", name: "description", widget: "text"}
 
-  - name: "eventos"
+- name: "eventos"
     label: "Próximos Eventos"
     folder: "_data/eventos"
     create: true
     fields:
       - {label: "Nome do Evento", name: "title", widget: "string"}
       - {label: "Data", name: "date", widget: "datetime"}
-      - {label: "Imagem de Capa", name: "image", widget: "image"}
+      - {label: "Imagem de Capa (Principal)", name: "image", widget: "image"}
       - {label: "Descrição", name: "body", widget: "markdown"}
+      
+      # NOVO CAMPO: Galeria de fotos extras
+      - label: "Galeria de Fotos Extras"
+        name: "gallery"
+        widget: "list"
+        allow_add: true
+        fields:
+          - {label: "Imagem", name: "img_path", widget: "image"}
+
 
